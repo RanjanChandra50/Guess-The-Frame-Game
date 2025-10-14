@@ -2,13 +2,15 @@ import { Trophy, User } from 'lucide-react';
 
 interface ScoreboardProps {
   scores: Record<string, number>;
+  currentSection?: string; // to check if button should be enabled
+  onFinalSubmit?: () => void; // callback when button pressed
 }
 
-export default function Scoreboard({ scores }: ScoreboardProps) {
+export default function Scoreboard({ scores, currentSection, onFinalSubmit }: ScoreboardProps) {
   const sortedPlayers = Object.entries(scores).sort((a, b) => b[1] - a[1]);
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6 sticky top-24">
+    <div className="bg-white rounded-lg shadow-lg p-6 sticky top-24 flex flex-col gap-4">
       <div className="flex items-center gap-2 mb-6">
         <Trophy className="text-yellow-500" size={28} />
         <h2 className="text-2xl font-bold text-gray-800">Scoreboard</h2>
@@ -51,6 +53,21 @@ export default function Scoreboard({ scores }: ScoreboardProps) {
           </div>
         ))}
       </div>
+
+      {/* Final Submit Button */}
+      {onFinalSubmit && (
+        <button
+          onClick={onFinalSubmit}
+          disabled={currentSection !== "gamechanger"}
+          className={`w-full py-3 rounded-xl text-lg font-semibold transition-all mt-4 ${
+            currentSection === "gamechanger"
+              ? "bg-gradient-to-r from-green-500 to-blue-500 text-white hover:scale-105 shadow-lg"
+              : "bg-gray-200 text-gray-400 cursor-not-allowed"
+          }`}
+        >
+          Final Submit
+        </button>
+      )}
     </div>
   );
 }

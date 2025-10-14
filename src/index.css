@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* Optional class for specific use */
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Make it global */
+body {
+  @apply font-sans; /* Tailwind default sans fallback */
+  font-family: "Bebas Neue", sans-serif;
+}
+
 @layer utilities {
   @keyframes fade-in {
     from {

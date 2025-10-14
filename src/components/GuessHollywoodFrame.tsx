@@ -13,11 +13,7 @@ const PLAYERS = ["Aman", "Amish", "WVish", "Aziz"];
 
 const hollywoodFrames = [
   { id: 1, image: "/frames/hollywood/frame1.png", answer: "BadLands" },
-  {
-    id: 2,
-    image: "/frames/hollywood/frame2.png",
-    answer: "in the heart of the sea",
-  },
+  { id: 2, image: "/frames/hollywood/frame2.png", answer: "in the heart of the sea" },
   { id: 3, image: "/frames/hollywood/frame3.png", answer: "Fast X" },
   { id: 4, image: "/frames/hollywood/frame4.png", answer: "The Batman" },
   { id: 5, image: "/frames/hollywood/frame5.png", answer: "Oblivion" },
@@ -25,16 +21,8 @@ const hollywoodFrames = [
   { id: 7, image: "/frames/hollywood/frame7.png", answer: "John Carter" },
   { id: 8, image: "/frames/hollywood/frame8.png", answer: "Mortal Kombat II" },
   { id: 9, image: "/frames/hollywood/frame9.png", answer: "GTA VI" },
-  {
-    id: 10,
-    image: "/frames/hollywood/frame10.png",
-    answer: "Logan",
-  },
-  {
-    id: 11,
-    image: "/frames/hollywood/frame11.png",
-    answer: "Wakanda Forever",
-  },
+  { id: 10, image: "/frames/hollywood/frame10.png", answer: "Logan" },
+  { id: 11, image: "/frames/hollywood/frame11.png", answer: "Wakanda Forever" },
 ];
 
 export default function GuessHollywoodFrame({
@@ -52,9 +40,9 @@ export default function GuessHollywoodFrame({
 
   const currentFrame = hollywoodFrames[currentIndex];
 
-  // Reset round strictly when currentIndex changes
+  // Reset round when frame changes
   useEffect(() => {
-    setShowAnswer(false); // hide answer immediately on next frame
+    setShowAnswer(false);
     setTimeLeft(18);
     setIsTimerActive(true);
     setTimerKey((prev) => prev + 1);
@@ -62,14 +50,14 @@ export default function GuessHollywoodFrame({
     onTimerStart();
   }, [currentIndex]);
 
-  // Timer logic
+  // Timer countdown logic
   useEffect(() => {
     if (!isTimerActive) return;
 
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
-        if (prev <= 1) {
-          setShowAnswer(true);
+        if (prev <= 0) {
+          // setShowAnswer(true);
           setIsTimerActive(false);
           onTimerStop();
           return 0;
@@ -84,14 +72,14 @@ export default function GuessHollywoodFrame({
 
   const handleNext = () => {
     if (currentIndex < hollywoodFrames.length - 1) {
-      setShowAnswer(false); // hide previous answer immediately
+      setShowAnswer(false);
       setCurrentIndex((prev) => prev + 1);
     }
   };
 
   const handleBack = () => {
     if (currentIndex > 0) {
-      setShowAnswer(false); // hide previous answer immediately
+      setShowAnswer(false);
       setCurrentIndex((prev) => prev - 1);
     }
   };
@@ -113,6 +101,7 @@ export default function GuessHollywoodFrame({
           Guess the Hollywood Frame
         </h2>
 
+        {/* Frame Display */}
         <div className="relative aspect-video bg-gray-900 rounded-lg overflow-hidden mb-6">
           <div className="relative aspect-video bg-black rounded-lg overflow-hidden mb-6 flex items-center justify-center">
             <img
@@ -139,6 +128,7 @@ export default function GuessHollywoodFrame({
           )}
         </div>
 
+        {/* Navigation & Controls */}
         <div className="flex items-center justify-between gap-4 mb-6">
           <button
             onClick={handleBack}
@@ -174,6 +164,7 @@ export default function GuessHollywoodFrame({
           </button>
         </div>
 
+        {/* Scoreboard */}
         <div className="bg-blue-50 rounded-lg p-6">
           <h3 className="text-lg font-semibold text-gray-800 mb-4">
             Manual Scoring
@@ -196,18 +187,17 @@ export default function GuessHollywoodFrame({
                     </span>
                   )}
                 </div>
+
                 <div className="flex gap-2">
                   <button
                     onClick={() => handleScoreChange(player, -10)}
                     className="flex-1 bg-red-500 hover:bg-red-600 text-white rounded-lg p-2 transition-colors"
-                    disabled={player === currentReferee}
                   >
                     <Minus size={16} className="mx-auto" />
                   </button>
                   <button
                     onClick={() => handleScoreChange(player, 10)}
                     className="flex-1 bg-green-500 hover:bg-green-600 text-white rounded-lg p-2 transition-colors"
-                    disabled={player === currentReferee}
                   >
                     <Plus size={16} className="mx-auto" />
                   </button>

@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Eye, CheckCircle, XCircle, Plus, Minus } from 'lucide-react';
 
-interface RiddlesQuizProps {
+interface GameChangerRoundProps {
   updateScore: (player: string, points: number) => void;
-  currentReferee: string;
+  currentReferee: string; // Navbar me None dikhega
   onTimerUpdate: (time: number) => void;
   onTimerStart: () => void;
   onTimerStop: () => void;
@@ -11,107 +11,56 @@ interface RiddlesQuizProps {
 
 const PLAYERS = ['Aman', 'Amish', 'WVish', 'Aziz'];
 
-const riddles = [
+const questions = [
   {
     id: 1,
-    question: "A small group works in secret to turn the tide against powerful enemies, using wit and disguise rather than brute force. Which movie tells their daring story?",
-    options: ['Inglourious Basterds', 'Fury', 'The Dirty Dozen', 'Hacksaw Ridge'],
+    question: "This is a Game Change round dummy question?",
+    options: ['Correct Option', 'Wrong Option 1', 'Wrong Option 2', 'Wrong Option 3'],
     correctAnswer: 0,
-    explanation: 'Classic war movie with covert operations.',
+    explanation: 'This is just a demo explanation for the correct answer.',
   },
   {
     id: 2,
-    question: 'A kingdom torn by betrayal sees a young warrior rise, unaware of his royal legacy. With courage, strategy, and allies by his side, he challenges impossible odds to reclaim what is rightfully his. Which movie tells this epic tale of power and destiny?',
-    options: ['Magadheera', 'Padmaavat', 'Bahubali', 'RRR'],
-    correctAnswer: 2,
-    explanation: 'Epic Indian saga of a hero reclaiming his kingdom.',
+    question: "This is a Game Change round dummy question?",
+    options: ['Correct Option', 'Wrong Option 1', 'Wrong Option 2', 'Wrong Option 3'],
+    correctAnswer: 0,
+    explanation: 'This is just a demo explanation for the correct answer.',
   },
   {
     id: 3,
-    question: 'On a distant world, a human finds himself torn between loyalty to his own kind and the beings who call the planet home. Amid lush landscapes and conflict over survival, he must choose where his heart truly belongs. Which movie tells this story of connection and courage?',
-    options: ['Star Wars: A New Hope', 'Guardians of the Galaxy', 'Avatar', 'John Carter'],
-    correctAnswer: 2,
-    explanation: 'Sci-fi story about humans connecting with another world.',
+    question: "This is a Game Change round dummy question?",
+    options: ['Correct Option', 'Wrong Option 1', 'Wrong Option 2', 'Wrong Option 3'],
+    correctAnswer: 0,
+    explanation: 'This is just a demo explanation for the correct answer.',
   },
   {
     id: 4,
-    question: 'Most fans have the misconception that Captain America was the first Marvel hero, but the first Marvel hero, appearing in ‘Marvel Comics No.1’ in 1939 was...?',
-    options: ['The Human Torch', 'Captain America', 'Iron Man', 'Namor the Sub-Mariner'],
+    question: "This is a Game Change round dummy question?",
+    options: ['Correct Option', 'Wrong Option 1', 'Wrong Option 2', 'Wrong Option 3'],
     correctAnswer: 0,
-    explanation: 'Namor, the Sub-Mariner, debuted first in Marvel comics.',
+    explanation: 'This is just a demo explanation for the correct answer.',
   },
-  {
-    id: 5,
-    question: 'What was the first feature-length animated movie ever released....?',
-    options: ['Fantasia', 'Cinderella', 'Pinocchio', 'Snow White and the Seven Dwarfs'],
-    correctAnswer: 3,
-    explanation: 'Namor, the Sub-Mariner, debuted first in Marvel comics.',
-  },
-  {
-    id: 6,
-    question: 'Star-Lord, also known as Peter Quill, discovers that his father Ego is actually a what...?',
-    options: ['Eternal', 'God', 'Celestial', 'Titan'],
-    correctAnswer: 2,
-    explanation: 'Namor, the Sub-Mariner, debuted first in Marvel comics.',
-  },
-  {
-    id: 7,
-    question: 'What video game does Thor get addicted to in Avengers: Endgame..?',
-    options: ['Call of Duty', 'Minecraft', 'Fortnite', 'PUBG'],
-    correctAnswer: 2,
-    explanation: 'Namor, the Sub-Mariner, debuted first in Marvel comics.',
-  },
-  {
-    id: 8,
-    question: 'In the iconic film Sholay, Amjad Khan was almost replaced as Gabbar because his voice was considered too weak. Which actor was originally chosen for the role..?',
-    options: ['Pran', 'Amrish Puri', 'Anupam Kher', 'Danny Denzongpa'],
-    correctAnswer: 3,
-    explanation: 'Namor, the Sub-Mariner, debuted first in Marvel comics.',
-  },
-  {
-    id: 9,
-    question: 'Which two Indian films are known for being among the longest ever made, each with a runtime of around 255 minutes...?',
-    options: ['Mera Naam Joker & LOC: Kargil', 'Lagaan & Swades', 'Gangs of Wasseypur & Mughal-e-Azam', 'Kabhi Khushi Kabhie Gham & Baahubali 2'],
-    correctAnswer: 0,
-    explanation: 'Namor, the Sub-Mariner, debuted first in Marvel comics.',
-  },
-  {
-    id: 10,
-    question: 'The iconic Star Wars villain Darth Vader was partly inspired by which Marvel character..?',
-    options: ['Doctor Doom', 'Magneto', 'Thanos', 'Red Skull'],
-    correctAnswer: 0,
-    explanation: 'Namor, the Sub-Mariner, debuted first in Marvel comics.',
-  },
-  {
-    id: 11,
-    question: 'In 1972, Marvel became the first comic publisher to give a black superhero his own comic. Which hero made this historic debut...?',
-    options: ['Black Panther', 'Luke Cage', 'Falcon', 'Blade'],
-    correctAnswer: 0,
-    explanation: 'Namor, the Sub-Mariner, debuted first in Marvel comics.',
-  },
-  
 ];
 
-export default function RiddlesQuiz({
+export default function GameChangerRound({
   updateScore,
   currentReferee,
   onTimerUpdate,
   onTimerStart,
   onTimerStop
-}: RiddlesQuizProps) {
+}: GameChangerRoundProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [timeLeft, setTimeLeft] = useState(25);
   const [isTimerActive, setIsTimerActive] = useState(false);
   const [answerRevealed, setAnswerRevealed] = useState(false);
 
-  const currentRiddle = riddles[currentIndex];
+  const currentQ = questions[currentIndex];
 
   useEffect(() => {
     resetRound();
   }, [currentIndex]);
 
-  // Timer runs down to 0, but does NOT auto-reveal answer
   useEffect(() => {
     if (!isTimerActive) return;
 
@@ -131,23 +80,16 @@ export default function RiddlesQuiz({
   }, [isTimerActive, onTimerUpdate]);
 
   const handleNext = () => {
-    if (currentIndex < riddles.length - 1) {
-      setCurrentIndex(prev => prev + 1);
-    }
+    if (currentIndex < questions.length - 1) setCurrentIndex(prev => prev + 1);
   };
-
   const handleBack = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(prev => prev - 1);
-    }
+    if (currentIndex > 0) setCurrentIndex(prev => prev - 1);
   };
-
   const handleRevealAnswer = () => {
     setAnswerRevealed(true);
     setIsTimerActive(false);
     onTimerStop();
   };
-
   const resetRound = () => {
     setSelectedOption(null);
     setAnswerRevealed(false);
@@ -156,35 +98,33 @@ export default function RiddlesQuiz({
     onTimerUpdate(25);
     onTimerStart();
   };
-
   const handleOptionSelect = (optionIndex: number) => {
     if (answerRevealed) return;
     setSelectedOption(optionIndex);
   };
-
   const handleScoreChange = (player: string, delta: number) => {
     updateScore(player, delta);
   };
 
-  const isCorrect = selectedOption === currentRiddle.correctAnswer;
+  const isCorrect = selectedOption === currentQ.correctAnswer;
 
   return (
     <div className="space-y-6">
       <div className="bg-white rounded-lg shadow-xl p-6">
         <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-          Riddles & Quizzes
+          Game Change Round
         </h2>
 
         <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-8 mb-6">
           <p className="text-xl font-semibold text-gray-800 text-center">
-            {currentRiddle.question}
+            {currentQ.question}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-          {currentRiddle.options.map((option, index) => {
+          {currentQ.options.map((option, index) => {
             const isSelected = selectedOption === index;
-            const isCorrectOption = index === currentRiddle.correctAnswer;
+            const isCorrectOption = index === currentQ.correctAnswer;
             const showCorrect = answerRevealed && isCorrectOption;
             const showIncorrect = answerRevealed && isSelected && !isCorrect;
 
@@ -213,8 +153,6 @@ export default function RiddlesQuiz({
           })}
         </div>
 
-        {/* No extra green answer section below */}
-
         <div className="flex items-center justify-between gap-4 mb-6">
           <button
             onClick={handleBack}
@@ -227,7 +165,7 @@ export default function RiddlesQuiz({
 
           <div className="text-center">
             <span className="text-sm text-gray-500">
-              Question {currentIndex + 1} of {riddles.length}
+              Question {currentIndex + 1} of {questions.length}
             </span>
           </div>
 
@@ -242,7 +180,7 @@ export default function RiddlesQuiz({
 
           <button
             onClick={handleNext}
-            disabled={currentIndex === riddles.length - 1}
+            disabled={currentIndex === questions.length - 1}
             className="flex items-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 disabled:bg-gray-300 disabled:cursor-not-allowed text-white rounded-lg font-semibold transition-colors"
           >
             Next
@@ -256,28 +194,21 @@ export default function RiddlesQuiz({
             {PLAYERS.map(player => (
               <div
                 key={player}
-                className={`bg-white rounded-lg p-4 border-2 ${
-                  player === currentReferee ? 'border-purple-400 bg-purple-50' : 'border-gray-200'
-                }`}
+                className={`bg-white rounded-lg p-4 border-2`}
               >
                 <div className="text-center mb-2">
                   <span className="font-semibold text-gray-700">{player}</span>
-                  {player === currentReferee && (
-                    <span className="block text-xs text-purple-600 font-medium">Referee</span>
-                  )}
                 </div>
                 <div className="flex gap-2">
                   <button
                     onClick={() => handleScoreChange(player, -10)}
                     className="flex-1 bg-red-500 hover:bg-red-600 text-white rounded-lg p-2 transition-colors"
-                    // disabled={player === currentReferee}
                   >
                     <Minus size={16} className="mx-auto" />
                   </button>
                   <button
                     onClick={() => handleScoreChange(player, 10)}
                     className="flex-1 bg-green-500 hover:bg-green-600 text-white rounded-lg p-2 transition-colors"
-                    // disabled={player === currentReferee}
                   >
                     <Plus size={16} className="mx-auto" />
                   </button>

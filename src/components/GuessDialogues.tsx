@@ -188,14 +188,14 @@ export default function GuessDialogues({
                   <button
                     onClick={() => handleScoreChange(player, -10)}
                     className="flex-1 bg-red-500 hover:bg-red-600 text-white rounded-lg p-2 transition-colors"
-                    disabled={player === currentReferee}
+                    // disabled={player === currentReferee}
                   >
                     <Minus size={16} className="mx-auto" />
                   </button>
                   <button
                     onClick={() => handleScoreChange(player, 10)}
                     className="flex-1 bg-green-500 hover:bg-green-600 text-white rounded-lg p-2 transition-colors"
-                    disabled={player === currentReferee}
+                    // disabled={player === currentReferee}
                   >
                     <Plus size={16} className="mx-auto" />
                   </button>
