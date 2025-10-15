@@ -91,18 +91,12 @@ function AppContent() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-blue-50">
-      <header className="bg-gradient-to-r from-red-600 to-blue-600 text-white py-6 shadow-lg">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold text-center tracking-wide">
-            Scoopcast💖
-          </h1>
-          <p className="text-center text-red-100 mt-2">
-            The Ultimate Movie & Quiz Challenge
-          </p>
-        </div>
-      </header>
-
+    <div
+      className="min-h-screen"
+      style={{
+        background: "linear-gradient(to right, #0f2027, #203a43, #2c5364)",
+      }}
+    >
       {/* NAVBAR */}
       <nav className="bg-white shadow-md sticky top-0 z-10">
         <div className="container mx-auto px-4">

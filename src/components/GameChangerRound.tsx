@@ -14,31 +14,51 @@ const PLAYERS = ['Aman', 'Amish', 'WVish', 'Aziz'];
 const questions = [
   {
     id: 1,
-    question: "This is a Game Change round dummy question?",
-    options: ['Correct Option', 'Wrong Option 1', 'Wrong Option 2', 'Wrong Option 3'],
+    question: 'In Game of Thrones, which actor received a personal letter from George R. R. Martin praising his performance as a much-hated character, noting how he made viewers feel real contempt?',
+    options: [
+        'Jack Gleeson (Joffrey Baratheon, GoT)', 
+        'Lena Headey (Cersei Lannister, GoT)', 
+        'Iwan Rheon (Ramsay Bolton, GoT)', 
+        'Alfie Allen (Theon Greyjoy, GoT)'
+    ],
     correctAnswer: 0,
-    explanation: 'This is just a demo explanation for the correct answer.',
+    explanation: 'Jack Gleeson, who played Joffrey Baratheon, received a personal letter from George R. R. Martin praising his performance for making viewers genuinely hate the character. The other options are also villainous or morally ambiguous GoT characters, but the letter was specifically for Gleeson.'
   },
   {
     id: 2,
-    question: "This is a Game Change round dummy question?",
-    options: ['Correct Option', 'Wrong Option 1', 'Wrong Option 2', 'Wrong Option 3'],
-    correctAnswer: 0,
-    explanation: 'This is just a demo explanation for the correct answer.',
+    question: 'Loki appears on screen for 21 minutes and 30 seconds in which Marvel Cinematic Universe (MCU) movie, making it his longest appearance in the franchise?',
+    options: [
+        'Thor', 
+        'The Avengers', 
+        'Thor: The Dark World', 
+        'Thor: Ragnarok'
+    ],
+    correctAnswer: 1,
+    explanation: 'Loki appears for 21 minutes and 30 seconds in "The Avengers," which is the longest screen time he has in any MCU movie. Other films like "Thor" (21:15) and "Thor: The Dark World" (17:30) feature him less.'
   },
   {
     id: 3,
-    question: "This is a Game Change round dummy question?",
-    options: ['Correct Option', 'Wrong Option 1', 'Wrong Option 2', 'Wrong Option 3'],
-    correctAnswer: 0,
-    explanation: 'This is just a demo explanation for the correct answer.',
+    question: 'Which is the second longest song ever released in a Bollywood movie?',
+    options: [
+        'Ab Tumhare Hawale Watan Saathiyon',
+        'Sandese Aate Hain',
+        'Main Kahi Bhi Rahu',
+        'Sunoji Dulhan / HSSA'
+    ],
+    correctAnswer: 2,
+    explanation: '"Main Kahi Bhi Rahu" is the second longest song ever released in a Bollywood movie, making it notable for its duration compared to other lengthy Bollywood tracks.'
   },
   {
     id: 4,
-    question: "This is a Game Change round dummy question?",
-    options: ['Correct Option', 'Wrong Option 1', 'Wrong Option 2', 'Wrong Option 3'],
+    question: 'M is the mother of N and O. P and Q are brothers. R is married to O. S is the daughter of N. T is the son of Q. U is the father of R. What is the relationship between S and T?',
+    options: [
+        'Cousins',
+        'Aunt and Nephew',
+        'Uncle and Nephew',
+        'Sister and Brother'
+    ],
     correctAnswer: 0,
-    explanation: 'This is just a demo explanation for the correct answer.',
+    explanation: 'S is the daughter of N, and T is the son of Q. N and O are siblings, and O is married to R, whose father is U. P and Q are brothers, so S and T are cousins.'
   },
 ];
 

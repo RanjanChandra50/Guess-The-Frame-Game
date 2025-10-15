@@ -12,17 +12,17 @@ interface GuessHollywoodFrameProps {
 const PLAYERS = ["Aman", "Amish", "WVish", "Aziz"];
 
 const hollywoodFrames = [
-  { id: 1, image: "/frames/hollywood/frame1.png", answer: "BadLands" },
-  { id: 2, image: "/frames/hollywood/frame2.png", answer: "in the heart of the sea" },
-  { id: 3, image: "/frames/hollywood/frame3.png", answer: "Fast X" },
-  { id: 4, image: "/frames/hollywood/frame4.png", answer: "The Batman" },
-  { id: 5, image: "/frames/hollywood/frame5.png", answer: "Oblivion" },
-  { id: 6, image: "/frames/hollywood/frame6.png", answer: "Ice Road: Vengeance" },
-  { id: 7, image: "/frames/hollywood/frame7.png", answer: "John Carter" },
-  { id: 8, image: "/frames/hollywood/frame8.png", answer: "Mortal Kombat II" },
-  { id: 9, image: "/frames/hollywood/frame9.png", answer: "GTA VI" },
-  { id: 10, image: "/frames/hollywood/frame10.png", answer: "Logan" },
-  { id: 11, image: "/frames/hollywood/frame11.png", answer: "Wakanda Forever" },
+  { id: 1, image: "/frames/hollywood/frame1.png", answer: "Annabelle Creation" },
+  { id: 2, image: "/frames/hollywood/frame2.png", answer: "Kingdom of Heaven" },
+  { id: 3, image: "/frames/hollywood/frame3.png", answer: "Braveheart" },
+  { id: 4, image: "/frames/hollywood/frame4.png", answer: "1917" },
+  { id: 5, image: "/frames/hollywood/frame5.png", answer: "Troy" },
+  { id: 6, image: "/frames/hollywood/frame6.png", answer: "Black Adam" },
+  { id: 7, image: "/frames/hollywood/frame7.png", answer: "Moon Knight" },
+  { id: 8, image: "/frames/hollywood/frame8.png", answer: "Shang Chi" },
+  { id: 9, image: "/frames/hollywood/frame9.png", answer: "The Tomorrow War" },
+  { id: 10, image: "/frames/hollywood/frame10.png", answer: "Mulan" },
+  { id: 11, image: "/frames/hollywood/frame11.png", answer: "Alpha" },
 ];
 
 export default function GuessHollywoodFrame({

@@ -12,17 +12,17 @@ interface GuessIndianFrameProps {
 const PLAYERS = ["Aman", "Amish", "WVish", "Aziz"];
 
 const indianFrames = [
-  { id: 1, image: "/frames/indian/frame1.png", answer: "Thugs of hindostan" },
-  { id: 2, image: "/frames/indian/frame2.png", answer: "Padmavat" },
-  { id: 3, image: "/frames/indian/frame3.png", answer: "Shivaay" },
-  { id: 4, image: "/frames/indian/frame4.png", answer: "Paradise" },
-  { id: 5, image: "/frames/indian/frame5.png", answer: "Brothers" },
-  { id: 6, image: "/frames/indian/frame6.png", answer: "Ghatak" },
-  { id: 7, image: "/frames/indian/frame7.png", answer: "Tik Tic Tik" },
-  { id: 8, image: "/frames/indian/frame8.png", answer: "An Action Hero" },
-  { id: 9, image: "/frames/indian/frame9.png", answer: "Vikram Vedha" },
-  { id: 10, image: "/frames/indian/frame10.png", answer: "Jersey (Nani wale)" },
-  { id: 11, image: "/frames/indian/frame11.png", answer: "Hasee Toh Phasee" },
+  { id: 1, image: "/frames/indian/frame1.png", answer: "October" },
+  { id: 2, image: "/frames/indian/frame2.png", answer: "Tejas" },
+  { id: 3, image: "/frames/indian/frame3.png", answer: "Kedarnath (2018)" },
+  { id: 4, image: "/frames/indian/frame4.png", answer: "Super 30" },
+  { id: 5, image: "/frames/indian/frame5.png", answer: "Tumbbad" },
+  { id: 6, image: "/frames/indian/frame6.png", answer: "Panipat" },
+  { id: 7, image: "/frames/indian/frame7.png", answer: "Samrat Prithviraj" },
+  { id: 8, image: "/frames/indian/frame8.png", answer: "Shamshera" },
+  { id: 9, image: "/frames/indian/frame9.png", answer: "Jayeshbhai Jordaar" },
+  { id: 10, image: "/frames/indian/frame10.png", answer: "Bunty Aur Babli 2" },
+  { id: 11, image: "/frames/indian/frame11.png", answer: "Luka Chuppi" },
 ];
 
 export default function GuessIndianFrame({

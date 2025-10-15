@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+@font-face {
+  font-family: 'DeatheMaach';
+  src: url('/fonts/Deathe Maach NCV.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 /* Optional class for specific use */

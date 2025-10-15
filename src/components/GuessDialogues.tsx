@@ -19,17 +19,17 @@ interface GuessDialoguesProps {
 const PLAYERS = ["Aman", "Amish", "WVish", "Aziz"];
 
 const dialogues = [
-  { id: 1, dialogue: "My pain is my destiny and I can't avoid it", movieAnswer: "Kala Patther" },
-  { id: 2, dialogue: "I’m not like Superman.", movieAnswer: "Superman (Hawkgirl)" },
-  { id: 3, dialogue: "You know he tells people I’m a puke freak?", movieAnswer: "Green Lantern / Peacemaker S2" },
-  { id: 4, dialogue: "Jaanta nahi kiske samne khada hai?..Bhagwan tum ho nahi sakte ... insaan tum lagte nahi ... aur shaitaan se main nahi darta", movieAnswer: "Badass Ravikumar / Himesh Reshammiya" },
-  { id: 5, dialogue: "Hum bade professional log hai ... kaam kare ya na kare, payment poori lete hai", movieAnswer: "Jolly LLB3 / Arshad Warsi" },
-  { id: 6, dialogue: "Ek din social media par nahi rahoge toh tumhare alava kisi ko ghanta farak padne wala nahi hai ... lekin social responsibilities nahi nibhaoge, toh society ko zaroor farak padega", movieAnswer: "Baaghi 4 / Tiger Shroff" },
-  { id: 7, dialogue: "I figured out way back if God is all-powerful, He cannot be all good. And if He is all good, then He cannot be all-powerful", movieAnswer: "Batman V Superman / Lex Luthor" },
-  { id: 8, dialogue: "Our shot is battling in the turns. We need to build our car for combat.", movieAnswer: "F1 / Sonny Hayes" },
-  { id: 9, dialogue: "I'll solve equations with my right hand and write names with my left. I'll take a potato chip... and eat it!", movieAnswer: "Death Note / Light" },
-  { id: 10, dialogue: "The most powerful thing in the universe... still just a puppet.", movieAnswer: "Watchmen / Laurie Juspeczyk" },
-  { id: 11, dialogue: "Everybody wants a happy ending. Right? But it doesn't always roll that way. Maybe this time. I'm hoping if you play this back, it's in celebration. I hope families are reunited, I hope we get it back and something like a normal version of the planet has been restored, if there ever was such a thing. God, what a world", movieAnswer: "Avengers: Endgame / Tony Stark" },
+  { id: 1, dialogue: "Make your own future. Make your own past. It's all... right... now...", movieAnswer: "Zack Snyder's Justice League" },
+  { id: 2, dialogue: " Anybody accidentally kills anybody in a fight, they go to jail. It's called manslaughter.", movieAnswer: "Once Upon a Time... in Hollywood" },
+  { id: 3, dialogue: "As far as I'm concerned, that man's whole body is property of the U.S. army.", movieAnswer: "The Incredible Hulk" },
+  { id: 4, dialogue: "Sach pedh ke beej ki tarah hota hai ... jitna chahe dafna lo ... ek din bahar aa hi jaata hai", movieAnswer: "Drishyam 2" },
+  { id: 5, dialogue: "Talwar chalakar, khoon bahakar jung ladna ... tabahi nahi ... tarakki hoti hai", movieAnswer: "KGF Chapter 2" },
+  { id: 6, dialogue: "Hamare beech wahi rishta hai ... joh jugnu ka roshni se hai ... phoolon ka os se hai ... hiran ka kasturi se hai ... aur atma ka atma se hai", movieAnswer: "Stree 2: Sarkate Ka Aatank" },
+  { id: 7, dialogue: " I bet you've built the perfect safehouse. What's this even made of, vibranium?", movieAnswer: "Eternals / Ikaris" },
+  { id: 8, dialogue: "Tum mujhe naam do main tumhe laash doonga", movieAnswer: "War 2 / Hrithik Roshan" },
+  { id: 9, dialogue: "I know when they mention Galileo or Einstein or one of these other twits in the same breath as me", movieAnswer: "Superman / Lex Luthor" },
+  { id: 10, dialogue: "I was once little like you billions of years ago. A man from another world before this relentless, eternal hunger.", movieAnswer: "F4: First Steps / Galactus" },
+  { id: 11, dialogue: "Well, you said I'm all-powerful, stronger than all the Avengers combined, which includes at least one god", movieAnswer: "Thunderbolt* / The Sentry" },
 ];
 
 export default function GuessDialogues({
